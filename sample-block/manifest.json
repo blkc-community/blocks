@@ -1,0 +1,10 @@
+{
+  "id": "sample-block",
+  "name": "Sample Block",
+  "summary": "A minimal example block",
+  "description": "This is a sample block scaffolded for marketplace demos.",
+  "version": "0.1.0",
+  "entryPoint": "./src/index.ts",
+  "runtime": "bun",
+  "tags": ["example"]
+}

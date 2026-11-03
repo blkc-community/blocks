@@ -1,0 +1,208 @@
+{
+  "manifestVersion": 2,
+  "kind": "ui",
+  "id": "hero",
+  "name": "Hero",
+  "summary": "Page-top section with heading, supporting copy, calls to action and an optional image.",
+  "description": "Reference UI Block for BLKC v2. Props are defined in src/props.ts (zod) and emitted here as JSON Schema; the web renderer lives in @blkc-code/render-web.",
+  "version": "0.1.0",
+  "category": "hero",
+  "tags": [
+    "ui",
+    "hero",
+    "section"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "BLKC Core Team",
+      "role": "Platform"
+    }
+  ],
+  "repository": "https://github.com/blkc-community/blocks/tree/main/hero",
+  "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+      "eyebrow": {
+        "type": "string",
+        "maxLength": 60
+      },
+      "heading": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 120
+      },
+      "subheading": {
+        "type": "string",
+        "maxLength": 280
+      },
+      "cta": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+          },
+          "href": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "label",
+          "href"
+        ]
+      },
+      "secondaryCta": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+          },
+          "href": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "label",
+          "href"
+        ]
+      },
+      "image": {
+        "type": "object",
+        "properties": {
+          "src": {
+            "type": "string",
+            "minLength": 1
+          },
+          "alt": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "src",
+          "alt"
+        ]
+      },
+      "align": {
+        "default": "left",
+        "type": "string",
+        "enum": [
+          "left",
+          "center"
+        ]
+      }
+    },
+    "required": [
+      "heading"
+    ]
+  },
+  "controls": [
+    {
+      "prop": "eyebrow",
+      "control": "text",
+      "label": "Eyebrow",
+      "group": "content",
+      "placeholder": "New in town"
+    },
+    {
+      "prop": "heading",
+      "control": "text",
+      "label": "Heading",
+      "group": "content"
+    },
+    {
+      "prop": "subheading",
+      "control": "textarea",
+      "label": "Subheading",
+      "group": "content"
+    },
+    {
+      "prop": "cta.label",
+      "control": "text",
+      "label": "Primary button label",
+      "group": "content"
+    },
+    {
+      "prop": "cta.href",
+      "control": "url",
+      "label": "Primary button link",
+      "group": "content"
+    },
+    {
+      "prop": "secondaryCta.label",
+      "control": "text",
+      "label": "Secondary button label",
+      "group": "content"
+    },
+    {
+      "prop": "secondaryCta.href",
+      "control": "url",
+      "label": "Secondary button link",
+      "group": "content"
+    },
+    {
+      "prop": "image",
+      "control": "image",
+      "label": "Image",
+      "group": "content",
+      "help": "Alt text is required."
+    },
+    {
+      "prop": "align",
+      "control": "select",
+      "label": "Alignment",
+      "group": "style",
+      "options": [
+        {
+          "label": "Left",
+          "value": "left"
+        },
+        {
+          "label": "Center",
+          "value": "center"
+        }
+      ]
+    }
+  ],
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "color": {
+      "text": true,
+      "background": true
+    },
+    "spacing": {
+      "padding": true
+    }
+  },
+  "renderers": {
+    "web": {
+      "package": "@blkc-code/render-web",
+      "export": "Hero"
+    }
+  },
+  "example": {
+    "eyebrow": "Columbus, Ohio",
+    "heading": "Fresh bread, baked before sunrise",
+    "subheading": "Order by 8pm for next-morning pickup.",
+    "cta": {
+      "label": "Order now",
+      "href": "/order"
+    },
+    "secondaryCta": {
+      "label": "See the menu",
+      "href": "/menu"
+    },
+    "align": "left"
+  },
+  "visibility": "public",
+  "changelog": []
+}

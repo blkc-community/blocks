@@ -1,0 +1,46 @@
+﻿{
+    "manifestVersion":  1,
+    "id":  "embedder-bge-small",
+    "name":  "BGE Small Embedder",
+    "summary":  "Stub embedder that simulates BGE-small embeddings.",
+    "description":  "Generates deterministic mock embeddings following the BGE-small model signature. This stub is suitable for demos and unit tests.",
+    "version":  "0.1.0",
+    "tags":  [
+                 "embeddings",
+                 "vector"
+             ],
+    "entryPoint":  "./src/index.ts",
+    "runtime":  "bun",
+    "license":  "MIT",
+    "authors":  [
+                    {
+                        "name":  "BLKC Core Team",
+                        "role":  "Platform"
+                    }
+                ],
+    "inputs":  [
+                   "text"
+               ],
+    "outputs":  [
+                    "embedding"
+                ],
+    "capabilities":  [
+                         {
+                             "id":  "embedding-vector",
+                             "description":  "Generates deterministic vector embeddings"
+                         }
+                     ],
+    "metrics":  [
+                    {
+                        "name":  "vector_dim",
+                        "unit":  "dimensions",
+                        "description":  "Embedding length"
+                    }
+                ],
+    "visibility":  "public",
+    "changelog":  [
+
+                  ],
+    "sizeMB":  0.01,
+    "repository":  "https://github.com/blkc-community/blocks/tree/main/embedder-bge-small"
+}

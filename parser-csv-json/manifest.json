@@ -1,0 +1,46 @@
+﻿{
+    "manifestVersion":  1,
+    "id":  "parser-csv-json",
+    "name":  "CSV \u0026 JSON Parser",
+    "summary":  "Parses CSV or JSON content into structured records.",
+    "description":  "Transforms CSV rows or JSON documents into normalized records for downstream processing.",
+    "version":  "0.1.0",
+    "tags":  [
+                 "ingestion",
+                 "parser"
+             ],
+    "entryPoint":  "./src/index.ts",
+    "runtime":  "bun",
+    "license":  "MIT",
+    "authors":  [
+                    {
+                        "name":  "BLKC Core Team",
+                        "role":  "Platform"
+                    }
+                ],
+    "inputs":  [
+                   "content"
+               ],
+    "outputs":  [
+                    "records"
+                ],
+    "capabilities":  [
+                         {
+                             "id":  "structured-parser",
+                             "description":  "Parses CSV or JSON content into structured records"
+                         }
+                     ],
+    "metrics":  [
+                    {
+                        "name":  "records",
+                        "unit":  "rows",
+                        "description":  "Number of records returned"
+                    }
+                ],
+    "visibility":  "public",
+    "changelog":  [
+
+                  ],
+    "sizeMB":  0.02,
+    "repository":  "https://github.com/blkc-community/blocks/tree/main/parser-csv-json"
+}

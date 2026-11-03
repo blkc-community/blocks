@@ -1,0 +1,47 @@
+﻿{
+    "manifestVersion":  1,
+    "id":  "classifier-intent",
+    "name":  "Intent Classifier",
+    "summary":  "Scores text against a configurable set of intents.",
+    "description":  "Lightweight intent scoring stub suitable for prototyping conversational flows.",
+    "version":  "0.1.0",
+    "tags":  [
+                 "classifier",
+                 "intent"
+             ],
+    "entryPoint":  "./src/index.ts",
+    "runtime":  "bun",
+    "license":  "MIT",
+    "authors":  [
+                    {
+                        "name":  "BLKC Core Team",
+                        "role":  "Platform"
+                    }
+                ],
+    "inputs":  [
+                   "text",
+                   "intents"
+               ],
+    "outputs":  [
+                    "rankings"
+                ],
+    "capabilities":  [
+                         {
+                             "id":  "intent-scoring",
+                             "description":  "Ranks intents for user utterances"
+                         }
+                     ],
+    "metrics":  [
+                    {
+                        "name":  "top_k",
+                        "unit":  "intents",
+                        "description":  "Number of intents returned"
+                    }
+                ],
+    "visibility":  "public",
+    "changelog":  [
+
+                  ],
+    "sizeMB":  0.01,
+    "repository":  "https://github.com/blkc-community/blocks/tree/main/classifier-intent"
+}

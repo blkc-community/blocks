@@ -1,0 +1,24 @@
+{
+  "manifestVersion": 2,
+  "kind": "capability",
+  "id": "logbook",
+  "name": "Logbook Reader",
+  "summary": "Reads a BLKC logbook (.jsonl), checks the hash chain and filters entries by event or subject.",
+  "description": "Adds an audit trail to any Kit or Circuit. Give it the contents of a logbook .jsonl file and it returns the entries, whether the hash chain is intact, and any lines that were changed or out of order. Filter by event prefix (site., board.transition) or subject (a site, page, board or card). Uses the same verification rule as @blkc-code/logbook.",
+  "version": "0.1.0",
+  "tags": ["logbook", "audit", "capability"],
+  "license": "MIT",
+  "authors": [{ "name": "BLKC Core Team", "role": "Platform" }],
+  "repository": "https://github.com/blkc-community/blocks/tree/main/logbook",
+  "entryPoint": "./src/index.ts",
+  "runtime": "bun",
+  "inputs": ["content", "eventPrefix", "subject", "limit", "verify"],
+  "outputs": ["entries", "total", "valid", "issues", "lastHash"],
+  "capabilities": [
+    { "id": "audit-trail", "description": "Shows who changed what, and when" },
+    { "id": "tamper-check", "description": "Detects edited, removed or reordered entries" }
+  ],
+  "metrics": [{ "name": "entries_read", "unit": "entries", "description": "Entries parsed per run" }],
+  "visibility": "public",
+  "changelog": []
+}
