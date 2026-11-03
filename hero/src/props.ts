@@ -20,7 +20,10 @@ export const HeroPropsSchema = z.object({
       alt: z.string(),
     })
     .optional(),
-  align: z.enum(["left", "center"]).default("left"),
+  // Design surface: closed choices, mapped to Tailwind classes by the renderer.
+  tone: z.enum(["default", "muted", "accent", "inverse"]).default("default"),
+  size: z.enum(["sm", "md", "lg"]).default("md"),
+  align: z.enum(["left", "center", "right"]).default("left"),
 });
 
 export type HeroProps = z.infer<typeof HeroPropsSchema>;

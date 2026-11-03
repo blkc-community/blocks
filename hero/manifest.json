@@ -89,12 +89,32 @@
           "alt"
         ]
       },
+      "tone": {
+        "default": "default",
+        "type": "string",
+        "enum": [
+          "default",
+          "muted",
+          "accent",
+          "inverse"
+        ]
+      },
+      "size": {
+        "default": "md",
+        "type": "string",
+        "enum": [
+          "sm",
+          "md",
+          "lg"
+        ]
+      },
       "align": {
         "default": "left",
         "type": "string",
         "enum": [
           "left",
-          "center"
+          "center",
+          "right"
         ]
       }
     },
@@ -154,6 +174,52 @@
       "help": "Alt text is required."
     },
     {
+      "prop": "tone",
+      "control": "select",
+      "label": "Tone",
+      "group": "style",
+      "help": "Surface colour. Maps to the Kit theme, so the same Block matches every Kit.",
+      "options": [
+        {
+          "label": "Default",
+          "value": "default"
+        },
+        {
+          "label": "Muted",
+          "value": "muted"
+        },
+        {
+          "label": "Accent",
+          "value": "accent"
+        },
+        {
+          "label": "Inverse",
+          "value": "inverse"
+        }
+      ]
+    },
+    {
+      "prop": "size",
+      "control": "select",
+      "label": "Size",
+      "group": "style",
+      "help": "Vertical rhythm and type scale.",
+      "options": [
+        {
+          "label": "Small",
+          "value": "sm"
+        },
+        {
+          "label": "Medium",
+          "value": "md"
+        },
+        {
+          "label": "Large",
+          "value": "lg"
+        }
+      ]
+    },
+    {
       "prop": "align",
       "control": "select",
       "label": "Alignment",
@@ -166,6 +232,10 @@
         {
           "label": "Center",
           "value": "center"
+        },
+        {
+          "label": "Right",
+          "value": "right"
         }
       ]
     }
@@ -186,7 +256,7 @@
   "renderers": {
     "web": {
       "package": "@blkc-code/render-web",
-      "export": "Hero"
+      "export": "HeroBlock"
     }
   },
   "example": {
@@ -201,7 +271,9 @@
       "label": "See the menu",
       "href": "/menu"
     },
-    "align": "left"
+    "align": "left",
+    "tone": "default",
+    "size": "lg"
   },
   "visibility": "public",
   "changelog": []
