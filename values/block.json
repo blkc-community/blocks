@@ -1,0 +1,48 @@
+{
+  "$schema": "https://blkc.blackcode.space/schemas/v2/block.json",
+  "manifestVersion": 2,
+  "kind": "ui",
+  "id": "values",
+  "name": "Values",
+  "summary": "A heading and a grid of short value statements.",
+  "description": "A heading and a grid of short value statements. The web renderer lives in @blkc-code/render-web.",
+  "version": "1.0.0",
+  "category": "content",
+  "tags": [
+    "ui",
+    "section"
+  ],
+  "license": "MIT",
+  "repository": "https://github.com/blkc-community/blocks/tree/main/values",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true,
+      "maxLength": 120,
+      "label": "Heading"
+    },
+    "items": {
+      "type": "list",
+      "label": "Values",
+      "items": {
+        "title": "string",
+        "text": "string"
+      }
+    }
+  },
+  "renderers": {
+    "web": {
+      "package": "@blkc-code/render-web",
+      "export": "ValuesBlock",
+      "version": "^0.2.0"
+    }
+  },
+  "example": {
+    "heading": "What we value",
+    "items": [
+      {
+        "title": "Patience"
+      }
+    ]
+  }
+}

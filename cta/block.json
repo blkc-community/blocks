@@ -1,0 +1,48 @@
+{
+  "$schema": "https://blkc.blackcode.space/schemas/v2/block.json",
+  "manifestVersion": 2,
+  "kind": "ui",
+  "id": "cta",
+  "name": "Call to action",
+  "summary": "A centred heading, supporting text and one button.",
+  "description": "A centred heading, supporting text and one button. The web renderer lives in @blkc-code/render-web.",
+  "version": "1.0.0",
+  "category": "conversion",
+  "tags": [
+    "ui",
+    "section"
+  ],
+  "license": "MIT",
+  "repository": "https://github.com/blkc-community/blocks/tree/main/cta",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true,
+      "maxLength": 120,
+      "label": "Heading"
+    },
+    "text": {
+      "type": "string",
+      "maxLength": 280,
+      "label": "Text"
+    },
+    "cta": {
+      "type": "link",
+      "label": "Button"
+    }
+  },
+  "renderers": {
+    "web": {
+      "package": "@blkc-code/render-web",
+      "export": "CtaBlock",
+      "version": "^0.2.0"
+    }
+  },
+  "example": {
+    "heading": "Ready to start?",
+    "cta": {
+      "label": "Get in touch",
+      "href": "/contact"
+    }
+  }
+}
