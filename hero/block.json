@@ -1,0 +1,67 @@
+{
+  "$schema": "https://blkc.blackcode.space/schemas/v2/block.json",
+  "manifestVersion": 2,
+  "kind": "ui",
+  "id": "hero",
+  "name": "Hero",
+  "summary": "Page-top section with heading, supporting copy, calls to action and an optional image.",
+  "description": "Page-top section with heading, supporting copy, calls to action and an optional image. The published renderer is in @blkc-code/render-web; render.web.tsx is the same code, for forking.",
+  "version": "0.1.0",
+  "category": "hero",
+  "tags": [
+    "ui"
+  ],
+  "license": "MIT",
+  "repository": "https://github.com/blkc-community/blocks/tree/main/hero",
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "label": "Eyebrow",
+      "maxLength": 60
+    },
+    "heading": {
+      "type": "string",
+      "label": "Heading",
+      "required": true,
+      "maxLength": 120
+    },
+    "subheading": {
+      "type": "string",
+      "label": "Subheading",
+      "maxLength": 280
+    },
+    "cta": {
+      "type": "link",
+      "label": "Main button"
+    },
+    "secondaryCta": {
+      "type": "link",
+      "label": "Second button"
+    },
+    "image": {
+      "type": "image",
+      "label": "Image"
+    }
+  },
+  "renderers": {
+    "web": {
+      "package": "@blkc-code/render-web",
+      "export": "HeroBlock",
+      "version": "^0.3.0"
+    }
+  },
+  "example": {
+    "eyebrow": "Welcome",
+    "heading": "Say what you do",
+    "subheading": "One sentence on who it is for and why it matters.",
+    "cta": {
+      "label": "Get started",
+      "href": "#"
+    },
+    "secondaryCta": {
+      "label": "Learn more",
+      "href": "#"
+    },
+    "align": "center"
+  }
+}

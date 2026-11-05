@@ -5,7 +5,7 @@
   "id": "cta",
   "name": "Call to action",
   "summary": "A centred heading, supporting text and one button.",
-  "description": "A centred heading, supporting text and one button. The web renderer lives in @blkc-code/render-web.",
+  "description": "A centred heading, supporting text and one button. The published renderer is in @blkc-code/render-web; render.web.tsx is the same code, for forking.",
   "version": "1.0.0",
   "category": "conversion",
   "tags": [
@@ -35,7 +35,7 @@
     "web": {
       "package": "@blkc-code/render-web",
       "export": "CtaBlock",
-      "version": "^0.2.0"
+      "version": "^0.3.0"
     }
   },
   "example": {

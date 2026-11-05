@@ -1,0 +1,35 @@
+{
+  "$schema": "https://blkc.blackcode.space/schemas/v2/block.json",
+  "manifestVersion": 2,
+  "kind": "ui",
+  "id": "text",
+  "name": "Text",
+  "summary": "A block of text.",
+  "description": "A block of text. The published renderer is in @blkc-code/render-web; render.web.tsx is the same code, for forking.",
+  "version": "1.0.0",
+  "category": "content",
+  "tags": [
+    "ui"
+  ],
+  "license": "MIT",
+  "repository": "https://github.com/blkc-community/blocks/tree/main/text",
+  "attributes": {
+    "content": {
+      "type": "string",
+      "label": "Content",
+      "required": true
+    }
+  },
+  "renderers": {
+    "web": {
+      "package": "@blkc-code/render-web",
+      "export": "TextBlock",
+      "version": "^0.3.0"
+    }
+  },
+  "example": {
+    "content": "<p>Write something here.</p>",
+    "tag": "div",
+    "padding": "2rem 1rem"
+  }
+}

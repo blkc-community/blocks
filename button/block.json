@@ -1,0 +1,41 @@
+{
+  "$schema": "https://blkc.blackcode.space/schemas/v2/block.json",
+  "manifestVersion": 2,
+  "kind": "ui",
+  "id": "button",
+  "name": "Button",
+  "summary": "A button that links somewhere.",
+  "description": "A button that links somewhere. The published renderer is in @blkc-code/render-web; render.web.tsx is the same code, for forking.",
+  "version": "1.0.0",
+  "category": "content",
+  "tags": [
+    "ui"
+  ],
+  "license": "MIT",
+  "repository": "https://github.com/blkc-community/blocks/tree/main/button",
+  "attributes": {
+    "label": {
+      "type": "string",
+      "label": "Label",
+      "required": true
+    },
+    "href": {
+      "type": "string",
+      "label": "Link",
+      "required": true
+    }
+  },
+  "renderers": {
+    "web": {
+      "package": "@blkc-code/render-web",
+      "export": "ButtonBlock",
+      "version": "^0.3.0"
+    }
+  },
+  "example": {
+    "label": "Click me",
+    "href": "#",
+    "variant": "primary",
+    "size": "md"
+  }
+}

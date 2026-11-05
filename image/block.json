@@ -1,0 +1,44 @@
+{
+  "$schema": "https://blkc.blackcode.space/schemas/v2/block.json",
+  "manifestVersion": 2,
+  "kind": "ui",
+  "id": "image",
+  "name": "Image",
+  "summary": "An image with an optional caption.",
+  "description": "An image with an optional caption. The published renderer is in @blkc-code/render-web; render.web.tsx is the same code, for forking.",
+  "version": "1.0.0",
+  "category": "content",
+  "tags": [
+    "ui"
+  ],
+  "license": "MIT",
+  "repository": "https://github.com/blkc-community/blocks/tree/main/image",
+  "attributes": {
+    "src": {
+      "type": "string",
+      "label": "Image URL",
+      "required": true
+    },
+    "alt": {
+      "type": "string",
+      "label": "Description",
+      "required": true
+    },
+    "caption": {
+      "type": "string",
+      "label": "Caption"
+    }
+  },
+  "renderers": {
+    "web": {
+      "package": "@blkc-code/render-web",
+      "export": "ImageBlock",
+      "version": "^0.3.0"
+    }
+  },
+  "example": {
+    "src": "https://placehold.co/800x400/png",
+    "alt": "A placeholder",
+    "caption": "Your caption"
+  }
+}
