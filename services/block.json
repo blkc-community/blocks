@@ -1,0 +1,55 @@
+{
+  "$schema": "https://blkc.blackcode.space/schemas/v2/block.json",
+  "manifestVersion": 2,
+  "kind": "ui",
+  "id": "services",
+  "name": "Services",
+  "summary": "A heading, an intro and a grid of service cards.",
+  "description": "A heading, an intro and a grid of service cards. The web renderer lives in @blkc-code/render-web.",
+  "version": "1.0.0",
+  "category": "content",
+  "tags": [
+    "ui",
+    "section"
+  ],
+  "license": "MIT",
+  "repository": "https://github.com/blkc-community/blocks/tree/main/services",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true,
+      "maxLength": 120,
+      "label": "Heading"
+    },
+    "intro": {
+      "type": "string",
+      "maxLength": 280,
+      "label": "Intro"
+    },
+    "items": {
+      "type": "list",
+      "label": "Services",
+      "items": {
+        "title": "string",
+        "text": "string",
+        "link": "link"
+      }
+    }
+  },
+  "renderers": {
+    "web": {
+      "package": "@blkc-code/render-web",
+      "export": "ServicesBlock",
+      "version": "^0.2.0"
+    }
+  },
+  "example": {
+    "heading": "What we offer",
+    "items": [
+      {
+        "title": "One to one",
+        "text": "Coaching built around you."
+      }
+    ]
+  }
+}

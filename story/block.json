@@ -1,0 +1,54 @@
+{
+  "$schema": "https://blkc.blackcode.space/schemas/v2/block.json",
+  "manifestVersion": 2,
+  "kind": "ui",
+  "id": "story",
+  "name": "Story",
+  "summary": "A heading and rich text beside an optional image.",
+  "description": "A heading and rich text beside an optional image. The web renderer lives in @blkc-code/render-web.",
+  "version": "1.0.0",
+  "category": "content",
+  "tags": [
+    "ui",
+    "section"
+  ],
+  "license": "MIT",
+  "repository": "https://github.com/blkc-community/blocks/tree/main/story",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true,
+      "maxLength": 120,
+      "label": "Heading"
+    },
+    "body": {
+      "type": "richtext",
+      "label": "Story"
+    },
+    "image": {
+      "type": "image",
+      "label": "Image"
+    },
+    "imageSide": {
+      "type": "string",
+      "enum": [
+        "left",
+        "right"
+      ],
+      "default": "right",
+      "label": "Image side",
+      "group": "style"
+    }
+  },
+  "renderers": {
+    "web": {
+      "package": "@blkc-code/render-web",
+      "export": "StoryBlock",
+      "version": "^0.2.0"
+    }
+  },
+  "example": {
+    "heading": "Our story",
+    "body": "<p>Started in a garage.</p>"
+  }
+}

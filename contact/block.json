@@ -1,0 +1,53 @@
+{
+  "$schema": "https://blkc.blackcode.space/schemas/v2/block.json",
+  "manifestVersion": 2,
+  "kind": "ui",
+  "id": "contact",
+  "name": "Contact",
+  "summary": "Email, phone and address as links. Forms belong to a capability Block.",
+  "description": "Email, phone and address as links. Forms belong to a capability Block. The web renderer lives in @blkc-code/render-web.",
+  "version": "1.0.0",
+  "category": "content",
+  "tags": [
+    "ui",
+    "section"
+  ],
+  "license": "MIT",
+  "repository": "https://github.com/blkc-community/blocks/tree/main/contact",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true,
+      "maxLength": 120,
+      "label": "Heading"
+    },
+    "intro": {
+      "type": "string",
+      "maxLength": 280,
+      "label": "Intro"
+    },
+    "email": {
+      "type": "string",
+      "label": "Email"
+    },
+    "phone": {
+      "type": "string",
+      "label": "Phone"
+    },
+    "address": {
+      "type": "string",
+      "label": "Address"
+    }
+  },
+  "renderers": {
+    "web": {
+      "package": "@blkc-code/render-web",
+      "export": "ContactBlock",
+      "version": "^0.2.0"
+    }
+  },
+  "example": {
+    "heading": "Find us",
+    "email": "hello@example.com"
+  }
+}
