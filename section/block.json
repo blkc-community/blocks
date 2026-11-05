@@ -1,0 +1,38 @@
+{
+  "$schema": "https://blkc.blackcode.space/schemas/v2/block.json",
+  "manifestVersion": 2,
+  "kind": "ui",
+  "id": "section",
+  "name": "Section",
+  "summary": "A wrapper with a background and padding around other content.",
+  "description": "A wrapper with a background and padding around other content. The published renderer is in @blkc-code/render-web; render.web.tsx is the same code, for forking.",
+  "version": "1.0.0",
+  "category": "content",
+  "tags": [
+    "ui"
+  ],
+  "license": "MIT",
+  "repository": "https://github.com/blkc-community/blocks/tree/main/section",
+  "attributes": {
+    "backgroundColor": {
+      "type": "string",
+      "label": "Background colour"
+    },
+    "padding": {
+      "type": "string",
+      "label": "Padding"
+    }
+  },
+  "renderers": {
+    "web": {
+      "package": "@blkc-code/render-web",
+      "export": "SectionBlock",
+      "version": "^0.3.0"
+    }
+  },
+  "example": {
+    "backgroundColor": "#f4f4f5",
+    "padding": "2rem",
+    "minHeight": "8rem"
+  }
+}

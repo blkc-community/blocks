@@ -5,7 +5,7 @@
   "id": "values",
   "name": "Values",
   "summary": "A heading and a grid of short value statements.",
-  "description": "A heading and a grid of short value statements. The web renderer lives in @blkc-code/render-web.",
+  "description": "A heading and a grid of short value statements. The published renderer is in @blkc-code/render-web; render.web.tsx is the same code, for forking.",
   "version": "1.0.0",
   "category": "content",
   "tags": [
@@ -34,7 +34,7 @@
     "web": {
       "package": "@blkc-code/render-web",
       "export": "ValuesBlock",
-      "version": "^0.2.0"
+      "version": "^0.3.0"
     }
   },
   "example": {

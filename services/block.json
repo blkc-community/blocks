@@ -5,7 +5,7 @@
   "id": "services",
   "name": "Services",
   "summary": "A heading, an intro and a grid of service cards.",
-  "description": "A heading, an intro and a grid of service cards. The web renderer lives in @blkc-code/render-web.",
+  "description": "A heading, an intro and a grid of service cards. The published renderer is in @blkc-code/render-web; render.web.tsx is the same code, for forking.",
   "version": "1.0.0",
   "category": "content",
   "tags": [
@@ -40,7 +40,7 @@
     "web": {
       "package": "@blkc-code/render-web",
       "export": "ServicesBlock",
-      "version": "^0.2.0"
+      "version": "^0.3.0"
     }
   },
   "example": {
