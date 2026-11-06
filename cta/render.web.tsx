@@ -10,14 +10,14 @@ interface LinkValue {
   href: string;
 }
 
-const BAND = "w-full px-4 py-16 sm:py-20";
+const BAND = "w-full px-6 py-16 sm:py-24";
 
 const INNER = "mx-auto flex w-full max-w-blkc flex-col gap-8";
 
-const HEADING = "text-3xl font-bold tracking-tight sm:text-4xl";
+const HEADING = "blkc-heading text-3xl font-bold tracking-tight text-balance sm:text-4xl";
 
 const BUTTON =
-  "inline-flex w-fit items-center justify-center rounded-md bg-primary px-6 py-3 text-base font-semibold text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
+  "inline-flex w-fit items-center justify-center rounded-lg bg-accent-foreground px-7 py-3.5 text-base font-semibold text-accent no-underline shadow-md transition-all hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
 interface CtaProps {
   heading: string;
@@ -27,8 +27,8 @@ interface CtaProps {
 
 function CtaBlock({ props: p, className, style }: BlockProps<CtaProps>): ReactNode {
   return (
-    <section className={clsx("blkc-cta bg-accent text-accent-foreground", BAND, className)} style={style}>
-      <div className={clsx(INNER, "items-center text-center")}>
+    <section className={clsx("blkc-cta", BAND, className)} style={style}>
+      <div className={clsx(INNER, "items-center rounded-3xl bg-accent px-6 py-14 text-center text-accent-foreground shadow-lg sm:py-20")}>
         <h2 className={HEADING}>{p.heading}</h2>
         {p.text && <p className="max-w-2xl text-lg">{p.text}</p>}
         {p.cta && (

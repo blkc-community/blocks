@@ -17,7 +17,7 @@ import type { BlockProps, BlockSize, BlockTone, HeroProps } from "@blkc-code/ren
  * no CSS at all.
  */
 const HERO_TONE_CLASSES: Record<BlockTone, string> = {
-  default: "bg-background text-foreground",
+  default: "bg-background text-foreground bg-[radial-gradient(60rem_30rem_at_50%_-10%,color-mix(in_srgb,var(--blkc-color-primary,#0066cc)_16%,transparent),transparent)]",
   muted: "bg-muted text-foreground",
   accent: "bg-accent text-accent-foreground",
   inverse: "bg-foreground text-background",
@@ -95,19 +95,19 @@ function HeroBlock({ props: p, className, style }: BlockProps<HeroProps>): React
 
   const ctaClass = (variant: "primary" | "secondary" | "outline" = "primary"): string =>
     clsx(
-      "inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-base font-semibold transition-colors",
+      "inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-base font-semibold no-underline shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md",
       "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
       variant === "secondary"
         ? "bg-secondary text-secondary-foreground hover:bg-secondary/80"
         : variant === "outline"
-          ? "border border-input bg-background text-foreground hover:bg-accent hover:text-accent-foreground"
+          ? "border border-border bg-background text-foreground hover:bg-muted"
           : "bg-primary text-primary-foreground hover:bg-primary/90",
     );
 
   return (
     <section
       className={clsx(
-        "blkc-hero relative flex w-full flex-col justify-center px-4",
+        "blkc-hero relative flex w-full flex-col justify-center px-6",
         scale.section,
         toneClass,
         alignClass,
@@ -133,17 +133,17 @@ function HeroBlock({ props: p, className, style }: BlockProps<HeroProps>): React
 
       <div className={clsx("flex w-full max-w-3xl flex-col", scale.gap)}>
         {eyebrow && (
-          <p className={clsx("font-medium uppercase tracking-wide", scale.eyebrow)}>
+          <p className={clsx("w-fit rounded-full border border-border bg-muted px-3 py-1 font-semibold uppercase tracking-wide", alignment === "center" && "mx-auto", alignment === "right" && "ml-auto", scale.eyebrow)}>
             {eyebrow}
           </p>
         )}
 
-        <h1 className={clsx("font-bold leading-tight tracking-tight", scale.heading)}>
+        <h1 className={clsx("blkc-heading font-bold leading-[1.1] tracking-tight text-balance", scale.heading)}>
           {heading}
         </h1>
 
         {subheading && (
-          <p className={clsx("text-muted-foreground", scale.subheading)}>{subheading}</p>
+          <p className={clsx("text-muted-foreground text-pretty", scale.subheading)}>{subheading}</p>
         )}
 
         {(cta || secondaryCta) && (

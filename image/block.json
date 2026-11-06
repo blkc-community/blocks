@@ -33,12 +33,13 @@
     "web": {
       "package": "@blkc-code/render-web",
       "export": "ImageBlock",
-      "version": "^0.3.0"
+      "version": "^0.4.0"
     }
   },
   "example": {
     "src": "https://placehold.co/800x400/png",
     "alt": "A placeholder",
-    "caption": "Your caption"
+    "caption": "Your caption",
+    "width": "480px"
   }
 }

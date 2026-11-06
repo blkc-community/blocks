@@ -1,0 +1,144 @@
+{
+  "$schema": "https://blkc.blackcode.space/schemas/v2/block.json",
+  "manifestVersion": 2,
+  "kind": "ui",
+  "id": "office",
+  "name": "Office",
+  "summary": "A living pixel-art office: people and tasks as characters and quests.",
+  "description": "Draws agents and tasks in a canvas office. @blkc-code/render-web writes the page; @blkc-code/render-canvas draws it. render.web.tsx is the page half, for forking; the layout, team and quests are props.",
+  "version": "0.1.0",
+  "category": "showcase",
+  "tags": [
+    "ui",
+    "canvas",
+    "pixel"
+  ],
+  "license": "MIT",
+  "repository": "https://github.com/blkc-community/blocks/tree/main/office",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "label": "Heading"
+    },
+    "intro": {
+      "type": "string",
+      "label": "Intro"
+    },
+    "agents": {
+      "type": "list",
+      "label": "Team",
+      "items": {
+        "id": "string",
+        "name": "string",
+        "role": "string",
+        "state": "string",
+        "task": "string"
+      }
+    },
+    "tasks": {
+      "type": "list",
+      "label": "Quests",
+      "items": {
+        "title": "string",
+        "state": "string",
+        "agent": "string"
+      }
+    }
+  },
+  "renderers": {
+    "web": {
+      "package": "@blkc-code/render-web",
+      "export": "OfficeBlock",
+      "version": "^0.4.0"
+    },
+    "canvas": {
+      "package": "@blkc-code/render-canvas",
+      "export": "createOffice",
+      "version": "^0.1.0"
+    }
+  },
+  "example": {
+    "heading": "Meet the team",
+    "intro": "Everyone here is data. Change a status in JSON and they get up and walk to where that work happens.",
+    "agents": [
+      {
+        "id": "nova",
+        "name": "Nova",
+        "role": "Builder",
+        "state": "working",
+        "task": "Building the checkout page"
+      },
+      {
+        "id": "sage",
+        "name": "Sage",
+        "role": "Researcher",
+        "state": "thinking",
+        "task": "Comparing three ways to do search"
+      },
+      {
+        "id": "rex",
+        "name": "Rex",
+        "role": "Fixer",
+        "state": "blocked",
+        "task": "Waiting on a login to the staging site"
+      },
+      {
+        "id": "juno",
+        "name": "Juno",
+        "role": "Reviewer",
+        "state": "reviewing",
+        "task": "Reading through the pricing page"
+      },
+      {
+        "id": "mika",
+        "name": "Mika",
+        "role": "Writer",
+        "state": "idle",
+        "task": "Taking a break between articles"
+      },
+      {
+        "id": "ola",
+        "name": "Ola",
+        "role": "Designer",
+        "state": "done",
+        "task": "Finished the new logo"
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Design the logo",
+        "state": "done",
+        "agent": "ola"
+      },
+      {
+        "title": "Write the about page",
+        "state": "done",
+        "agent": "mika"
+      },
+      {
+        "title": "Build the checkout page",
+        "state": "doing",
+        "agent": "nova"
+      },
+      {
+        "title": "Choose a search tool",
+        "state": "doing",
+        "agent": "sage"
+      },
+      {
+        "title": "Review the pricing page",
+        "state": "doing",
+        "agent": "juno"
+      },
+      {
+        "title": "Fix the staging login",
+        "state": "todo",
+        "agent": "rex"
+      },
+      {
+        "title": "Launch",
+        "state": "todo"
+      }
+    ]
+  }
+}

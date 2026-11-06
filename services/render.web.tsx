@@ -16,19 +16,19 @@ interface CardItem {
   link?: LinkValue;
 }
 
-const BAND = "w-full px-4 py-16 sm:py-20";
+const BAND = "w-full px-6 py-16 sm:py-24";
 
 const INNER = "mx-auto flex w-full max-w-blkc flex-col gap-8";
 
-const HEADING = "text-3xl font-bold tracking-tight sm:text-4xl";
+const HEADING = "blkc-heading text-3xl font-bold tracking-tight text-balance sm:text-4xl";
 
-const LEAD = "max-w-2xl text-lg text-muted-foreground";
+const LEAD = "max-w-2xl text-lg text-muted-foreground text-pretty";
 
-function CardGrid({ items, showLinks }: { items: CardItem[]; showLinks: boolean }): ReactNode {
+function CardGrid({ items, showLinks, surface }: { items: CardItem[]; showLinks: boolean; surface: string }): ReactNode {
   return (
     <ul className="grid list-none gap-6 p-0 sm:grid-cols-2 lg:grid-cols-3">
       {items.map((item, index) => (
-        <li key={index} className="flex flex-col gap-2 rounded-lg border border-border p-6">
+        <li key={index} className={clsx("flex flex-col gap-3 rounded-xl border border-border p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md", surface)}>
           <h3 className="text-xl font-semibold">{item.title}</h3>
           {item.text && <p className="text-muted-foreground">{item.text}</p>}
           {showLinks && item.link && (
@@ -54,7 +54,7 @@ function ServicesBlock({ props: p, className, style }: BlockProps<ServicesProps>
       <div className={INNER}>
         <h2 className={HEADING}>{p.heading}</h2>
         {p.intro && <p className={LEAD}>{p.intro}</p>}
-        <CardGrid items={p.items ?? []} showLinks />
+        <CardGrid items={p.items ?? []} showLinks surface="bg-muted" />
       </div>
     </section>
   );
