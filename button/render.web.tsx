@@ -16,7 +16,7 @@ function ButtonBlock({ props: p, className, style }: BlockProps<ButtonProps>): R
     variant = "primary",
     size = "md",
     alignment = "center",
-    target = "_self",
+    target,
     icon,
     iconPosition = "left",
   } = p;
