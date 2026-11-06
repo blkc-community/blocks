@@ -10,9 +10,9 @@ interface ImageValue {
   alt: string;
 }
 
-const BAND = "w-full px-4 py-16 sm:py-20";
+const BAND = "w-full px-6 py-16 sm:py-24";
 
-const HEADING = "text-3xl font-bold tracking-tight sm:text-4xl";
+const HEADING = "blkc-heading text-3xl font-bold tracking-tight text-balance sm:text-4xl";
 
 interface StoryProps {
   heading: string;
@@ -28,10 +28,10 @@ function StoryBlock({ props: p, className, style }: BlockProps<StoryProps>): Rea
       <div className="mx-auto grid w-full max-w-blkc items-center gap-10 md:grid-cols-2">
         <div className={clsx("flex flex-col gap-4", p.imageSide === "left" && "md:order-2")}>
           <h2 className={HEADING}>{p.heading}</h2>
-          {body && <div className="flex flex-col gap-3 leading-relaxed" dangerouslySetInnerHTML={{ __html: body }} />}
+          {body && <div className="flex flex-col gap-3 text-lg leading-relaxed text-muted-foreground [&_strong]:text-foreground" dangerouslySetInnerHTML={{ __html: body }} />}
         </div>
         {p.image && (
-          <img src={p.image.src} alt={p.image.alt} className="h-auto w-full rounded-lg object-cover" />
+          <img src={p.image.src} alt={p.image.alt} className="h-auto w-full rounded-2xl border border-border object-cover shadow-lg" />
         )}
       </div>
     </section>

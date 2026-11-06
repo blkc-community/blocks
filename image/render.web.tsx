@@ -34,7 +34,7 @@ function ImageBlock({ props: p, className, style }: BlockProps<ImageProps>): Rea
     <img
       src={imageUrl}
       alt={alt}
-      className="blkc-image-img block h-auto max-w-full"
+      className="blkc-image-img block h-auto max-w-full rounded-xl border border-border shadow-md"
       style={{
         width: width || "100%",
         height: height || "auto",
@@ -59,10 +59,10 @@ function ImageBlock({ props: p, className, style }: BlockProps<ImageProps>): Rea
   );
 
   return (
-    <figure className={clsx("blkc-image flex w-full flex-col gap-2", alignClass, className)}>
+    <figure className={clsx("blkc-image flex w-full max-w-5xl flex-col gap-3 px-6 py-8", alignClass, className)}>
       <div className="blkc-image-wrapper w-full">{content}</div>
       {caption && (
-        <figcaption className="blkc-image-caption text-sm text-muted-foreground">
+        <figcaption className="blkc-image-caption text-center text-sm text-muted-foreground">
           {caption}
         </figcaption>
       )}

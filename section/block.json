@@ -21,18 +21,26 @@
     "padding": {
       "type": "string",
       "label": "Padding"
+    },
+    "heading": {
+      "type": "string",
+      "label": "Heading"
+    },
+    "content": {
+      "type": "string",
+      "label": "Content"
     }
   },
   "renderers": {
     "web": {
       "package": "@blkc-code/render-web",
       "export": "SectionBlock",
-      "version": "^0.3.0"
+      "version": "^0.4.0"
     }
   },
   "example": {
-    "backgroundColor": "#f4f4f5",
-    "padding": "2rem",
-    "minHeight": "8rem"
+    "heading": "A section of your page",
+    "content": "<p>Give it a background and some words, or put other Blocks inside it in code.</p>",
+    "backgroundColor": "#f4f4f5"
   }
 }

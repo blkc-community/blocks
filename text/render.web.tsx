@@ -39,7 +39,7 @@ function TextBlock({ props: p, className, style }: BlockProps<TextProps>): React
 
   return (
     <SafeTag
-      className={clsx("blkc-text leading-relaxed", alignClass, className)}
+      className={clsx("blkc-text mx-auto w-full max-w-3xl px-6 py-8 text-lg leading-relaxed text-pretty [&_a]:font-medium [&_a]:text-primary [&_a]:underline [&_a]:underline-offset-4 [&_p+p]:mt-4", alignClass, className)}
       style={{
         margin,
         padding,

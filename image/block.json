@@ -33,12 +33,13 @@
     "web": {
       "package": "@blkc-code/render-web",
       "export": "ImageBlock",
-      "version": "^0.3.0"
+      "version": "^0.4.0"
     }
   },
   "example": {
-    "src": "https://placehold.co/800x400/png",
-    "alt": "A placeholder",
-    "caption": "Your caption"
+    "src": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2018%22%20shape-rendering%3D%22crispEdges%22%3E%3Crect%20width%3D%2232%22%20height%3D%2218%22%20fill%3D%22%231f1f3d%22%2F%3E%3Crect%20y%3D%2213%22%20width%3D%2232%22%20height%3D%225%22%20fill%3D%22%23a06f45%22%2F%3E%3Crect%20x%3D%224%22%20y%3D%229%22%20width%3D%2210%22%20height%3D%224%22%20fill%3D%22%238a5a33%22%2F%3E%3Crect%20x%3D%227%22%20y%3D%225%22%20width%3D%225%22%20height%3D%224%22%20fill%3D%22%23111827%22%2F%3E%3Crect%20x%3D%228%22%20y%3D%226%22%20width%3D%223%22%20height%3D%222%22%20fill%3D%22%2300ff88%22%2F%3E%3Crect%20x%3D%2219%22%20y%3D%226%22%20width%3D%224%22%20height%3D%224%22%20fill%3D%22%23f4d3b5%22%2F%3E%3Crect%20x%3D%2219%22%20y%3D%224%22%20width%3D%224%22%20height%3D%222%22%20fill%3D%22%235a3a22%22%2F%3E%3Crect%20x%3D%2218%22%20y%3D%2210%22%20width%3D%226%22%20height%3D%225%22%20fill%3D%22%233b82f6%22%2F%3E%3Crect%20x%3D%2226%22%20y%3D%229%22%20width%3D%223%22%20height%3D%224%22%20fill%3D%22%2315803d%22%2F%3E%3Crect%20x%3D%2226%22%20y%3D%2213%22%20width%3D%223%22%20height%3D%222%22%20fill%3D%22%2392400e%22%2F%3E%3C%2Fsvg%3E",
+    "alt": "A pixel-art person at a desk with a computer and a plant",
+    "caption": "Your caption",
+    "width": "480px"
   }
 }
