@@ -1,0 +1,34 @@
+{
+  "$schema": "https://blkc.blackcode.space/schemas/v2/block.json",
+  "manifestVersion": 2,
+  "kind": "ui",
+  "id": "gallery",
+  "name": "Photo gallery",
+  "summary": "A responsive grid of photos: your work, your space, your team.",
+  "description": "A responsive grid of photos with an optional heading and intro. The web renderer lives in @blkc-code/render-web.",
+  "version": "1.0.0",
+  "category": "content",
+  "tags": ["ui", "section", "gallery"],
+  "license": "MIT",
+  "authors": [
+    {"name": "BLKC Core Team", "role": "Platform"}
+  ],
+  "repository": "https://github.com/blkc-community/blocks/tree/main/gallery",
+  "attributes": {
+    "heading": {"type": "string", "required": true, "maxLength": 120, "label": "Heading"},
+    "intro": {"type": "string", "maxLength": 280, "label": "Intro"},
+    "images": {"type": "list", "label": "Photos", "items": {"title": "string", "src": "string", "alt": "string", "caption": "string"}},
+    "size": {"type": "string", "enum": ["small", "large"], "default": "small", "label": "Photo size", "group": "style"}
+  },
+  "renderers": {
+    "web": {"package": "@blkc-code/render-web", "export": "GalleryBlock", "version": "^0.2.0"}
+  },
+  "example": {
+    "heading": "Gallery",
+    "intro": "A selection of recent work.",
+    "images": [{"src": "/images/1.jpg", "alt": "A recent project"}],
+    "size": "small"
+  },
+  "visibility": "public",
+  "changelog": []
+}

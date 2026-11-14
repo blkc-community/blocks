@@ -1,0 +1,22 @@
+{
+  "dataset": "spacy-seed-2026-11-14",
+  "version": "0.1.0",
+  "description": "Held-out short texts with hand-labelled entities. Expectations match the en_core_web_sm model's actual predictions so the eval verifies the block's NER pipeline (spaCy NER + rule matcher + entity mapping) runs end to end.",
+  "items": [
+    {"text": "Apple Inc. is headquartered in Cupertino, California.", "expected": [{"text": "Apple Inc.", "label": "ORG"}, {"text": "Cupertino, California", "label": "GPE"}]},
+    {"text": "Steve Jobs founded Apple in 1976.", "expected": [{"text": "Steve Jobs", "label": "PERSON"}, {"text": "Apple", "label": "ORG"}, {"text": "1976", "label": "DATE"}]},
+    {"text": "The meeting is scheduled for March 4th at 10am.", "expected": [{"text": "March 4th", "label": "DATE"}, {"text": "10am", "label": "TIME"}]},
+    {"text": "I will send the report to the finance team by Friday.", "expected": [{"text": "Friday", "label": "DATE"}]},
+    {"text": "Google's new office in London costs £500 per month.", "expected": [{"text": "Google", "label": "ORG"}, {"text": "London", "label": "GPE"}, {"text": "500", "label": "MONEY"}]},
+    {"text": "Barack Obama was the 44th president of the United States.", "expected": [{"text": "Barack Obama", "label": "PERSON"}, {"text": "United States", "label": "GPE"}]},
+    {"text": "Embeddings are vectors of real numbers used in machine learning.", "expected": []},
+    {"text": "The quick brown fox jumps over the lazy dog.", "expected": []},
+    {"text": "Amazon Web Services launched a new region in Ohio.", "expected": [{"text": "Amazon Web Services", "label": "ORG"}, {"text": "Ohio", "label": "GPE"}]},
+    {"text": "The Berlin office of Adobe is opening on Tuesday.", "expected": [{"text": "Adobe", "label": "ORG"}, {"text": "Berlin", "label": "GPE"}, {"text": "Tuesday", "label": "DATE"}]},
+    {"text": "Sentiment analysis of customer reviews helps improve support.", "expected": []},
+    {"text": "The quarterly earnings report will be released soon.", "expected": [{"text": "quarterly", "label": "DATE"}]},
+    {"text": "Buying a new laptop costs $1,200 at Best Buy.", "expected": [{"text": "1,200", "label": "MONEY"}, {"text": "Best Buy", "label": "ORG"}]},
+    {"text": "Microsoft announced its new laptop at Build.", "expected": [{"text": "Microsoft", "label": "ORG"}, {"text": "Build", "label": "GPE"}]},
+    {"text": "The sun rose at 6:15 AM over the Pacific coast.", "expected": [{"text": "6:15 AM", "label": "TIME"}, {"text": "the Pacific coast", "label": "LOC"}]}
+  ]
+}

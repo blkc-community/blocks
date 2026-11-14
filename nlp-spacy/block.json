@@ -1,0 +1,45 @@
+{
+  "$schema": "https://blkc.blackcode.space/schemas/v2/block.json",
+  "manifestVersion": 2,
+  "kind": "capability",
+  "id": "nlp-spacy",
+  "name": "spaCy NLP",
+  "summary": "Named-entity recognition (NER) plus a rule matcher over a text.",
+  "description": "Strips named entities out of text with the en_core_web_sm model, then runs a small set of pattern rules over the token stream (organisation + hiring, location + open-role, money + costs, date + project). Blocks the flow of recurring patterns so the board can react to them. Deterministic and local — no network, no secrets, no authentication.",
+  "version": "0.1.0",
+  "entryPoint": "./src/index.py",
+  "runtime": "python",
+  "sizeMB": 0.05,
+  "tags": ["nlp", "ner", "spaCy", "rules"],
+  "license": "MIT",
+  "authors": [{"name": "BLKC Core Team", "role": "Platform"}],
+  "repository": "https://github.com/blkc-community/blocks/tree/main/nlp-spacy",
+  "inputs": ["text"],
+  "outputs": ["entities"],
+  "capabilities": [
+    {"id": "ner", "description": "Strips named entities out of text"},
+    {"id": "rule-matching", "description": "Runs pattern rules over the token stream"}
+  ],
+  "input": {
+    "text": {"type": "string", "maxLength": 4000, "label": "Text"}
+  },
+  "output": {
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "text": {"type": "string"},
+          "label": {"type": "string"}
+        }
+      }
+    }
+  },
+  "permissions": {"network": false, "secrets": []},
+  "models": [
+    {"id": "en_core_web_sm", "source": "https://spacy.io/models/en#en_core_web_sm", "label": "spaCy English NER model"}
+  ],
+  "visibility": "public",
+  "changelog": [],
+  "example": {"text": "Apple Inc. is headquartered in Cupertino, California."}
+}

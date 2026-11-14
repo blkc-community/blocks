@@ -1,0 +1,39 @@
+{
+  "$schema": "https://blkc.blackcode.space/schemas/v2/block.json",
+  "manifestVersion": 2,
+  "kind": "capability",
+  "id": "embedder-bge-small",
+  "name": "BGE Small Embedder",
+  "summary": "Deterministic stub of the BGE-small embedding signature.",
+  "description": "Generates fixed-size unit-vector embeddings that mirror the BGE-small model interface, so contracts, tests and demos run without a model download. Replace with a real embedder by matching the manifest contract.",
+  "version": "0.1.0",
+  "tags": ["embeddings", "vector", "stub"],
+  "license": "MIT",
+  "authors": [
+    {"name": "BLKC Core Team", "role": "Platform"}
+  ],
+  "repository": "https://github.com/blkc-community/blocks/tree/main/embedder-bge-small",
+  "entryPoint": "./src/index.ts",
+  "runtime": "bun",
+  "sizeMB": 0.01,
+  "inputs": ["text"],
+  "outputs": ["embedding", "model", "dimensions"],
+  "capabilities": [
+    {"id": "embedding-vector", "description": "Generates deterministic vector embeddings"}
+  ],
+  "input": {
+    "text": {"type": "string", "maxLength": 4000, "label": "Text"}
+  },
+  "output": {
+    "embedding": {"type": "array", "items": {"type": "number"}, "label": "Embedding vector"},
+    "model": {"type": "string", "label": "Model name"},
+    "dimensions": {"type": "number", "label": "Vector dimensions"}
+  },
+  "permissions": {"network": false, "secrets": []},
+  "models": [
+    {"id": "bge-small-stub", "source": "local", "license": "MIT"}
+  ],
+  "visibility": "public",
+  "changelog": [],
+  "example": {"text": "The quick brown fox"}
+}

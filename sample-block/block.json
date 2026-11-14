@@ -1,0 +1,32 @@
+{
+  "$schema": "https://blkc.blackcode.space/schemas/v2/block.json",
+  "manifestVersion": 2,
+  "kind": "capability",
+  "id": "sample-block",
+  "name": "Sample Block",
+  "summary": "A minimal example capability block for the marketplace.",
+  "description": "The smallest working capability block. Replace the body of `run` with your own implementation and publish.",
+  "version": "0.1.0",
+  "tags": ["example", "scaffold"],
+  "license": "MIT",
+  "authors": [
+    {"name": "BLKC Core Team", "role": "Platform"}
+  ],
+  "repository": "https://github.com/blkc-community/blocks/tree/main/sample-block",
+  "entryPoint": "./src/index.ts",
+  "runtime": "bun",
+  "sizeMB": 0.01,
+  "inputs": ["text"],
+  "outputs": ["ok"],
+  "input": {
+    "text": {"type": "string", "label": "Text"}
+  },
+  "output": {
+    "ok": {"type": "boolean", "label": "OK"}
+  },
+  "permissions": {"network": false, "secrets": []},
+  "models": [],
+  "visibility": "public",
+  "changelog": [],
+  "example": {"text": "hello"}
+}
