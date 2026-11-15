@@ -1,0 +1,36 @@
+{
+  "$schema": "https://blkc.blackcode.space/schemas/v2/block.json",
+  "manifestVersion": 2,
+  "kind": "ui",
+  "id": "contact-form",
+  "name": "Contact form",
+  "summary": "A form that sends messages to your email.",
+  "description": "A form that collects a name, email and message and sends the submission to your email. The form action is wired by the site template; the block only renders the fields. The web renderer lives in @blkc-code/render-web.",
+  "version": "1.0.0",
+  "category": "conversion",
+  "tags": ["ui", "section", "contact"],
+  "license": "MIT",
+  "authors": [
+    {"name": "BLKC Core Team", "role": "Platform"}
+  ],
+  "repository": "https://github.com/blkc-community/blocks/tree/main/contact-form",
+  "attributes": {
+    "heading": {"type": "string", "required": true, "maxLength": 120, "label": "Heading"},
+    "subheading": {"type": "string", "maxLength": 280, "label": "Description"},
+    "submitLabel": {"type": "string", "maxLength": 40, "label": "Submit button text"},
+    "successMessage": {"type": "string", "maxLength": 280, "label": "Success message"},
+    "recipientEmail": {"type": "string", "format": "email", "label": "Send submissions to"}
+  },
+  "renderers": {
+    "web": {"package": "@blkc-code/render-web", "export": "ContactFormBlock", "version": "^0.2.0"}
+  },
+  "example": {
+    "heading": "Get in touch",
+    "subheading": "Send us a message and we'll get back to you.",
+    "submitLabel": "Send message",
+    "successMessage": "Thanks! We'll be in touch.",
+    "recipientEmail": "hello@example.com"
+  },
+  "visibility": "public",
+  "changelog": []
+}

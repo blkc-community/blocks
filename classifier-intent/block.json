@@ -1,0 +1,58 @@
+{
+  "$schema": "https://blkc.blackcode.space/schemas/v2/block.json",
+  "manifestVersion": 2,
+  "kind": "capability",
+  "id": "classifier-intent",
+  "name": "Intent Classifier",
+  "summary": "Scores text against a configurable set of intents.",
+  "description": "Scores user utterances against a configurable set of intent labels and returns the ranked matches. Deterministic: no model download, no network call. Route conversations before any LLM runs.",
+  "version": "0.1.0",
+  "tags": ["classifier", "intent", "rules"],
+  "license": "MIT",
+  "authors": [
+    {"name": "BLKC Core Team", "role": "Platform"}
+  ],
+  "repository": "https://github.com/blkc-community/blocks/tree/main/classifier-intent",
+  "entryPoint": "./src/index.ts",
+  "runtime": "bun",
+  "sizeMB": 0.01,
+  "inputs": ["text", "intents", "topK"],
+  "outputs": ["rankings", "topIntent"],
+  "capabilities": [
+    {"id": "intent-scoring", "description": "Ranks intents for user utterances"}
+  ],
+  "input": {
+    "text": {"type": "string", "maxLength": 4000, "label": "Text"},
+    "intents": {"type": "array", "items": {"type": "string"}, "minItems": 1, "label": "Intent labels"},
+    "topK": {"type": "number", "minimum": 1, "default": 3, "label": "Return top N"}
+  },
+  "output": {
+    "rankings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "intent": {"type": "string"},
+          "score": {"type": "number"}
+        }
+      }
+    },
+    "topIntent": {
+      "type": "object",
+      "properties": {
+        "intent": {"type": "string"},
+        "score": {"type": "number"}
+      },
+      "nullable": true
+    }
+  },
+  "permissions": {"network": false, "secrets": []},
+  "models": [],
+  "visibility": "public",
+  "changelog": [],
+  "example": {
+    "text": "Request a product demo",
+    "intents": ["sales", "support", "billing"],
+    "topK": 2
+  }
+}

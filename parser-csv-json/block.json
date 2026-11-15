@@ -1,0 +1,39 @@
+{
+  "$schema": "https://blkc.blackcode.space/schemas/v2/block.json",
+  "manifestVersion": 2,
+  "kind": "capability",
+  "id": "parser-csv-json",
+  "name": "CSV & JSON Parser",
+  "summary": "Parses CSV or JSON content into structured records.",
+  "description": "Transforms CSV rows or JSON documents into normalized records for downstream processing. No dependencies, no network call.",
+  "version": "0.1.0",
+  "tags": ["ingestion", "parser"],
+  "license": "MIT",
+  "authors": [
+    {"name": "BLKC Core Team", "role": "Platform"}
+  ],
+  "repository": "https://github.com/blkc-community/blocks/tree/main/parser-csv-json",
+  "entryPoint": "./src/index.ts",
+  "runtime": "bun",
+  "sizeMB": 0.02,
+  "inputs": ["content", "format", "delimiter"],
+  "outputs": ["records", "fields", "format"],
+  "capabilities": [
+    {"id": "structured-parser", "description": "Parses CSV or JSON content into structured records"}
+  ],
+  "input": {
+    "content": {"type": "string", "label": "Content"},
+    "format": {"type": "string", "enum": ["csv", "json"], "label": "Format", "description": "Detected automatically when omitted"},
+    "delimiter": {"type": "string", "default": ",", "label": "Column separator for CSV"}
+  },
+  "output": {
+    "format": {"type": "string", "enum": ["csv", "json"], "label": "Detected format"},
+    "fields": {"type": "array", "items": {"type": "string"}, "label": "Field names"},
+    "records": {"type": "array", "items": {"type": "object"}, "label": "Records"}
+  },
+  "permissions": {"network": false, "secrets": []},
+  "models": [],
+  "visibility": "public",
+  "changelog": [],
+  "example": {"content": "name,email\nAda,ada@example.com"}
+}

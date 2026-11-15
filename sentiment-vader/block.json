@@ -1,0 +1,80 @@
+{
+  "$schema": "https://blkc.blackcode.space/schemas/v2/block.json",
+  "manifestVersion": 2,
+  "kind": "capability",
+  "id": "sentiment-vader",
+  "name": "VADER Sentiment",
+  "summary": "Rule-based sentiment analyser (VADER-style).",
+  "description": "Scores text for sentiment polarity using a curated subset of the VADER lexicon: lexicon matching, negation scope, degree modifiers, all-caps boost and trailing punctuation boost. Deterministic, no model download, no network call.",
+  "version": "0.1.0",
+  "entryPoint": "./src/index.ts",
+  "runtime": "bun",
+  "sizeMB": 0.01,
+  "tags": [
+    "sentiment",
+    "lexicon",
+    "rules"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "BLKC Core Team",
+      "role": "Platform"
+    }
+  ],
+  "repository": "https://github.com/blkc-community/blocks/tree/main/sentiment-vader",
+  "inputs": [
+    "text"
+  ],
+  "outputs": [
+    "sentiment",
+    "score",
+    "magnitude",
+    "words"
+  ],
+  "capabilities": [
+    {
+      "id": "sentiment-scoring",
+      "description": "Scores text for sentiment polarity"
+    }
+  ],
+  "input": {
+    "text": {
+      "type": "string",
+      "maxLength": 4000,
+      "label": "Text"
+    }
+  },
+  "output": {
+    "sentiment": {
+      "type": "string"
+    },
+    "score": {
+      "type": "number"
+    },
+    "magnitude": {
+      "type": "number"
+    },
+    "words": {
+      "type": "array"
+    }
+  },
+  "permissions": {
+    "network": false,
+    "secrets": []
+  },
+  "models": [],
+  "visibility": "public",
+  "changelog": [],
+  "example": {
+    "text": "I absolutely love this."
+  },
+  "evals": [
+    {
+      "dataset": "eval-set.json (vader-seed-2026-11-14, 45 items; also used for calibration, not held out)",
+      "metric": "accuracy",
+      "score": 1,
+      "ranAt": "2026-11-14"
+    }
+  ]
+}
